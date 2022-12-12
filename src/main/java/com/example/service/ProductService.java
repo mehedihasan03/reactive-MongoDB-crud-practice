@@ -32,6 +32,7 @@ public class ProductService {
     }
 
     public Mono<ProductDto> saveProduct(Mono<ProductDto> productDtoMono) {
+        System.out.println("Controller Method Called ... ");
         return productDtoMono.map(AppUtils::dtoToEntity)
                 .flatMap(repository::insert)
                 .map(AppUtils::entityToDto);

@@ -31,6 +31,7 @@ public class ProductController {
 
     @PostMapping("/save")
     public Mono<ProductDto> saveProduct(@RequestBody Mono<ProductDto> productDtoMono){
+        System.out.println("Controller Method Called ... ");
         return service.saveProduct(productDtoMono);
     }
 
